@@ -2,27 +2,28 @@ import React from 'react'
 import {Anchor,}from 'grommet';
 import Link from 'next/link'
 
-const MyAnchor= ({children,...rest})=>{
-
-    return <Anchor style={{
+const MyAnchor= React.forwardRef(({children,...rest}, ref) => (
+    <Anchor style={{
         textDecoration: 'none'
     }} 
     {...rest}
+    ref={ref}
     >
       {children}
     </Anchor>
+    
+  ));
 
-}
 
-const MyLink =({children,...rest})=>{
 
-    return(
-       <Link {...rest}>
-        <MyAnchor color={rest.color}>
+
+const MyLink= React.forwardRef(({children,href,...rest}, ref) => (
+    <Link {...{href,ref}} >
+        <MyAnchor {...rest} >
             {children}
         </MyAnchor>
-       </Link>
-    )
-}
+    </Link>
+    
+  ));
 
 export {MyLink,MyAnchor}
