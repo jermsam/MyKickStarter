@@ -1,34 +1,29 @@
 import React from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import MuiLink from '@material-ui/core/Link';
+import {Container,Divider} from 'semantic-ui-react'
+import {Box,Heading }from 'grommet';
+import MadeWithLove from 'components/MadeWithLove'
 import ProTip from 'components/ProTip';
-import Link from 'components/Link';
+import {MyLink }from 'components/navigation';
+import { NextSeo } from 'next-seo';
 
-function MadeWithLove() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Built with love by the '}
-      <MuiLink color="inherit" href="https://material-ui.com/">
-        Material-UI
-      </MuiLink>
-      {' team.'}
-    </Typography>
-  );
-}
 
-export default function About() {
+
+export default function Index() {
   return (
-    <Container maxWidth="sm">
-      <Box my={4}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Next.js v4-beta example
-        </Typography>
-        <Link href="/">Go to the main page</Link>
-        <ProTip />
-        <MadeWithLove />
-      </Box>
-    </Container>
+    <Container text>
+       <Divider section hidden/>
+      <NextSeo title='About'/>
+    <Box >
+      <Heading level="2">
+        Next.js v4-beta example
+      </Heading>
+      <MyLink color='grey' href='/'>
+        Go to the Home page
+        </MyLink>
+      <ProTip />
+      <MadeWithLove />
+    </Box>
+  </Container>
+    
   );
 }

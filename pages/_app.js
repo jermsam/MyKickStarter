@@ -1,45 +1,41 @@
-import React,{Fragment} from 'react';
-import App, { Container } from 'next/app';
-import Head from 'next/head';
-import  ThemeProvider  from '@material-ui/styles/ThemeProvider';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import JssProvider from 'react-jss/lib/JssProvider';
-import getPageContext from 'lib/getPageContext';
+import React from 'react';
+import App from 'next/app';
+import { Grommet} from 'grommet';
+import { NextSeo } from 'next-seo';
+import SEO from 'next-seo.config';
+import theme from 'theme'
+import 'public/css'
+
+
 
 class MyApp extends App {
 
-  pageContext = getPageContext();
+  static async getInitialProps({ Component, ctx }) {
+    let pageProps = {};
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+
+    return { pageProps };
+  }
 
   componentDidMount() {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentNode.removeChild(jssStyles);
-    }
+   
   }
 
   render() {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
+      <Grommet {...{theme}}>
       {/* Wrap every thing in JSS and Theme providers */}
-      <JssProvider
-          registry={this.pageContext.sheetsRegistry}
-          generateClassName={this.pageContext.generateClassName}
-        >
-        <Fragment>
-        <Head>
-          <title>My page</title>
-        </Head>
-        <ThemeProvider theme={this.pageContext.theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
+      
+      <NextSeo {...SEO} />
+        
           <Component {...pageProps} />
-        </ThemeProvider>
-        </Fragment>
-        </JssProvider>
-      </Container>
+       
+      
+        </Grommet>
     );
   }
 }
