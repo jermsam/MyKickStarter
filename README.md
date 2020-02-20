@@ -2,21 +2,26 @@
 
 ## How to use
 
-Download the example [or clone the repo](https://github.com/mui-org/material-ui):
+Download the example [or clone the repo](https://github.com/jermsam/MyKickStarter.git):
 
-```sh
-curl https://codeload.github.com/mui-org/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs
-cd nextjs
+```
+git clone https://github.com/jermsam/MyKickStarter.git
 ```
 
-Install it and run:
+Move into directory and install dependencies using yarn:
 
-```sh
-npm install
-npm run dev
 ```
+cd MyKickStarter && yarn
+```
+Check it out:
+
+```
+yarn dev
+```
+And build your awesome App upon it
 
 ## The idea behind the example
 
-[Next.js](https://github.com/zeit/next.js) is a framework for server-rendered React apps.
-[Hooks](https://reactjs.org/docs/hooks-state.html) are an upcoming feature of React.
+[Next.js](https://github.com/zeit/next.js).
+[Grommet v2](https://v2.grommet.io).
+[Semantic -ui - react](https://react.semantic-ui.com/).
