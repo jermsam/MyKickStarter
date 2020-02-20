@@ -1,4 +1,4 @@
-# Next.js example
+# Nextjs Kick Starter
 
 ## How to use
 
