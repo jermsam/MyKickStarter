@@ -20,7 +20,7 @@ yarn dev
 ```
 And build your awesome App upon it
 
-## The idea behind the example
+## The stack for the starter kit
 
 [Next.js](https://github.com/zeit/next.js).
 [Grommet v2](https://v2.grommet.io).
