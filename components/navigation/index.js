@@ -3,11 +3,10 @@ import {Anchor,}from 'grommet';
 import Link from 'next/link'
 
 const MyAnchor= React.forwardRef(({children,...rest}, ref) => (
-    <Anchor style={{
-        textDecoration: 'none'
-    }} 
-    {...rest}
+    <Anchor 
+    style={{textDecoration: 'none'}} 
     ref={ref}
+    {...rest}
     >
       {children}
     </Anchor>
